@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<style>
+*{
+	font-family:Tahoma,Verdana,arial;
+	font-size:11px;
+}
+
+#title{
+	width:210px;
+	float:left;
+}
+
+#icon{
+	max-width:48px;
+	max-height:48px;
+	margin-bottom:7px;
+	margin-right:7px;
+	float:left;
+}
+
+#favicon{
+	float:left;
+	position:absolute;
+	left:5px;
+	z-index:100;
+	display:none;
+}
+
+#saved{
+	float:left;
+	padding-bottom:7px;
+	width:215px;
+	color:black;
+}
+
+#link{
+	width:100%;
+	height:100%;
+	float:none;
+	color:black;
+	text-decoration:none;
+}
+
+#link #titleb{
+	color:#45688E;
+	font-weight:bold;
+}
+
+#link:hover #titleb{
+	text-decoration:underline;
+}
+
+#place{
+	float:none;
+}
+
+</style>
+<script type='text/javascript' src="../js/jquery.js"></script>
+<script type="text/javascript" src='../js/notification.js'></script>
+<title>Уведомление</title>
+</head>
+<body style="float:left;">
+<a href="" id="link" target="_blank">
+	<img src="../icon48.png" alt="Monoclick" id="icon">
+	<div id="title"><span id="titleb"></span><br>
+		<span id="description"></span>
+	</div>
+</a>
+</body>
+</html>

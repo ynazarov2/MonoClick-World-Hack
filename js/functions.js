@@ -65,6 +65,11 @@ function getBase64Image(img){
     return dataURL;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 }
 
+function notify(){
+  var notification = webkitNotifications.createHTMLNotification(chrome.extension.getURL('popup/notification.html'));
+  notification.show();
+}
+
 function curtime(){
   return Math.round((new Date()).getTime() / 1000);
 }

@@ -50,6 +50,12 @@ FBO.prototype.UploadImage = function(url,message,id){
 			Params.async = false;
 			Params.parameters = {message:message,object_attachment:result.id};
 			//Facade.FB.Post(Params);
+		}else{
+	        localStorage.notification = '{"title":"Post sent",'+
+	        '"description":"Image sent to your wall",'+
+	        '"href":"http://facebook.com",'+
+	        '"img":"'+url+'"}';
+	        notify();
 		}
 	}
 
