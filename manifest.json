@@ -11,7 +11,6 @@
     "default_title": "MonoClick",
     "default_popup": "popup.html"
   },
-  "default_locale":"en",
   "permissions": [
       "tabs", "<all_urls>" , "contextMenus", "notifications"
   ],
