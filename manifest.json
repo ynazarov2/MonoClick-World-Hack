@@ -14,6 +14,11 @@
   "permissions": [
       "tabs", "<all_urls>" , "contextMenus", "notifications"
   ],
+  "content_scripts": [
+  {
+      "matches": ["https://www.facebook.com/connect/login_success.html*"],
+      "js": ["js/fbAuthCheck.js"]
+  }],
   "icons": { 
              "16": "icon.png",
              "48": "icon48.png",
