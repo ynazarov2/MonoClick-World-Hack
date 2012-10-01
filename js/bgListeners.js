@@ -12,10 +12,9 @@ chrome.extension.onRequest.addListener(
           localStorage.fbauth_logged = 0;
           break;
         }
+        if(params[0]=='access_token') FB.accessToken = params[1];
         if(params[0]=='expires_in') params[1] = ''+(parseInt(params[1]) + curtime());
         localStorage[params[0]] = params[1];
-
-        alert(localStorage['access_token']);
       }
     }
   }
