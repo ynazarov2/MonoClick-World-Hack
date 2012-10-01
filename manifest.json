@@ -14,6 +14,7 @@
   "permissions": [
       "tabs", "<all_urls>" , "contextMenus", "notifications"
   ],
+  "web_accessible_resources": ["/inject/adv_post.html"],
   "content_scripts": [
   {
       "matches": ["https://www.facebook.com/connect/login_success.html*"],

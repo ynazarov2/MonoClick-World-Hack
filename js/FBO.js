@@ -68,5 +68,12 @@ FBO.prototype.uploadWallPhoto = function(){
 	}
 }
 
+FBO.prototype.uploadExtended = function(){
+	return function(info, tab){
+		localStorage.postImage = info.srcUrl;
+		insertPost();
+	}
+}
+
 FB = new FBO();
 FB.Login();

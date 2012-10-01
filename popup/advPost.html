@@ -1,0 +1,134 @@
+<html style="width:97.8%;">
+<head>
+<title>Отправить сообщение</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="../css/adv_post.css" type="text/css"/>
+</head>
+<script type="text/javascript" src="../scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/advPost/ui.js"></script>
+<script type="text/javascript" src="../scripts/func.js"></script>
+<script type="text/javascript" src="../scripts/adv_post.js"></script>
+ 
+<body style="width:100%;">
+<div id="plugin_area">
+	<div class="post_field" id="vk_view" style="display:none;">
+		<div class="quit_wrapper">
+			<img src="../img/exit.png" class="quit_button l18nl" ln="adv_close" id="quitButton" title="Close">
+		</div>
+		<div id="image_area">
+			<div id="notice" class="l18n" ln="adv_add_drag_image">
+				Чтобы добавить картинку, перетащите ее сюда.
+			</div>
+			<img src="../img/music0.png" id="music_choose" title="прикрепить аудиозапись">
+		</div>
+		<div id="post_area">
+			<div id="post_area_content">
+				<table style="margin:0px;padding:0px;float:left;width:100%;">
+					<tr width="100%" style="padding:0px;margin:0px;">
+						<td width="25">
+							<img id="avatar" src="../img/no_user.gif">
+						</td>
+						<td width="100%">
+							<textarea type="text" id="vk_input" class="l18np" ln="adv_your_comment" placeholder="Ваш комментарий"></textarea>
+						</td>
+						<td width="93">
+							<button id="btnSend" class="Button l18n" style="position:relative;bottom:2px;margin-left:4px;" ln="adv_send">Отправить</button>
+						</td>
+						<td width="0" style="padding-left:5px;position:relative;bottom:4px;">
+							<div style="white-space:nowrap;">
+								<img src="../img/services/vk_small.png" style="margin-top:8px;">
+								<a href="#" id="select_link">
+									<span class="select_link_text" style="margin-left:2px;margin-top:9px;">Себе на стену</span>
+									<img src="../img/uarr_on.png" id="up_arr">
+								</a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div style="width:100%;display:none;" class="post_field" id="fb_view">
+		<table style="width:100%;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width:100%;padding-right:30px;">
+					<div style="cursor:text;width:100%;" onclick="$('#fb_input').focus()">
+						<table cellspacing="0" cellpadding="0" style="width:100%;margin:0px;">
+							<tr>
+								<td style="padding:2px;padding-top:3px;">
+									<img src="../img/no_image.png" id="fb_image">
+								</td>
+								<td width="100%" style="height:54px;">
+									<textarea id="fb_input" class="l18np" ln="adv_your_comment" placeholder="Your comment"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="quit_wrapper">
+			<img src="../img/exit.png" class="quit_button l18nl" ln="adv_close"  onclick="quit()" title="Close">
+		</div>
+		<div id="post_area">
+			<div id="post_area_content">
+				<div style="margin-left:4px;margin-top:4px;">
+					<img id="avatar" src="../img/no_user.gif" onclick="ClickOnUser('FB')">
+					<div id="fb_user_name" onclick="ClickOnUser('FB')">Log in, please.</div>
+				</div>
+				<div style="float:right">
+					<button onclick="send_post()" class="Button l18n" style="margin-top:4px;margin-right:6px;" ln="adv_send">Отправить</button>
+					<img src="../img/services/fb_small.ico" style="margin-top:9px;">
+					<a href="javascript:show_select();" id="select_link">
+						<span class="select_link_text" style="margin-left:2px;margin-top:10px;">Себе на стену</span>
+						<img src="../img/uarr_on.png" id="up_arr">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width:100%;display:none;" class="post_field" id="tw_view" >
+		<table style="width:100%;" cellspacing="0" cellpadding="0">
+			<tr>
+				<td style="width:100%;padding-right:20px;">
+					<div style="cursor:text;width:100%;" onclick="$('#tw_input').focus()">
+						<table cellspacing="0" cellpadding="0" style="width:100%;margin:0px;margin-bottom:4px;">
+							<tr>
+								<td style="padding:2px;padding-top:3px;">
+									<img src="../img/no_image.png" id="tw_image">
+								</td>
+								<td width="100%">
+									<textarea id="tw_input" class="l18np" ln="adv_your_comment" placeholder="Your comment"></textarea>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="quit_wrapper">
+			<img src="../img/exit.png" class="quit_button" onclick="quit()" ln="adv_close" title="Close">
+		</div>
+		<div id="post_area">
+			<div id="post_area_content">
+				<div style="margin-left:4px;margin-top:4px;">
+					<img id="avatar" src="../img/no_user.gif" onclick="ClickOnUser('TW')">
+					<div id="tw_user_name" onclick="ClickOnUser('TW')">Log in, please.</div>
+					<div id="tw_counter" style="margin-left:10px;margin-top:5px;">0</div>
+				</div>
+				<div style="float:right;margin-right:20px;">
+					<button onclick="send_post()" class="Button l18n" style="margin-top:4px;" ln="adv_send">Отправить</button>
+					<!--
+					<img src="../img/services/tw_small.ico" style="margin-top:9px;">
+					<a href="javascript:show_select();" id="select_link">
+						<span class="select_link_text" style="margin-left:2px;margin-top:10px;">Себе в ленту</span>
+						<img src="../img/uarr_on.png" id="up_arr">
+					</a>
+					-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

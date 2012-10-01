@@ -16,6 +16,14 @@ chrome.extension.onRequest.addListener(
         if(params[0]=='expires_in') params[1] = ''+(parseInt(params[1]) + curtime());
         localStorage[params[0]] = params[1];
       }
+    }else
+    if(request.load == "sendPhoto"){
+    	FB.UploadImage(localStorage.postImage,localStorage.text);
+    	removePopup();
+    }
+
+    if(request.load == 'removePopup'){
+    	removePopup();
     }
   }
 )

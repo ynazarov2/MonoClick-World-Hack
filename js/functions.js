@@ -70,6 +70,12 @@ function notify(){
   notification.show();
 }
 
+function insertPost(all){
+  chrome.tabs.executeScript(null, {file: "js/jquery.js"});
+  chrome.tabs.executeScript(null, {file: "inject/jquery_ui.js"});
+  chrome.tabs.executeScript(null, {file: "inject/adv_post.js"});
+}
+
 function curtime(){
   return Math.round((new Date()).getTime() / 1000);
 }
@@ -81,3 +87,7 @@ XMLHttpRequest.prototype.sendAsBinary = function(string) {
   });
   this.send(new Uint8Array(bytes).buffer);
 };
+
+function removePopup(){
+  chrome.tabs.executeScript(null, {code: "document.getElementById(\"monoclick\").parentNode.removeChild(document.getElementById(\"monoclick\"));"});
+}
